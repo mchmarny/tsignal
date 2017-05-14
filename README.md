@@ -1,2 +1,2 @@
-# ttraider
-Project trying to compare Twitter sentiment impact on NASDAQ stocks
+# signal
+Analyzing social media sentiment and its impact on stock market

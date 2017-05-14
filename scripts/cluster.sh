@@ -14,3 +14,14 @@ gcloud container clusters create "${APP_NAME}-cluster" \
   --network "default" \
   --enable-cloud-logging \
   --enable-cloud-monitoring
+
+
+# define env vars
+# T_CONSUMER_KEY=${T_CONSUMER_KEY}
+# T_CONSUMER_SECRET=${T_CONSUMER_SECRET}
+# T_ACCESS_TOKEN=${T_ACCESS_TOKEN}
+# T_ACCESS_SECRET=${T_ACCESS_SECRET}
+# GCLOUD_PROJECT=${GCLOUD_PROJECT}
+# GCLOUD_INSTANCE=${GCLOUD_INSTANCE}
+# GCLOUD_DB=${GCLOUD_DB}
+# GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}

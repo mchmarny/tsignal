@@ -3,10 +3,6 @@
 DIR="$(dirname "$0")"
 . "${DIR}/config.sh"
 
-# ==============================================================================
-# Spanner Instance & DB
-# ==============================================================================
-
 gcloud beta spanner instances create ${GCLOUD_INSTANCE} \
   --config=${GCLOUD_REGION} \
   --description="${GCLOUD_INSTANCE} Instance" \

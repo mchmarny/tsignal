@@ -3,9 +3,6 @@
 DIR="$(dirname "$0")"
 . "${DIR}/config.sh"
 
-# ==============================================================================
-# Service Account
-# ==============================================================================
 
 echo "Checking if Service Account alredy created..."
 SA=$(gcloud beta iam service-accounts list --format='value(EMAIL)' --filter="EMAIL:${GCLOUD_SA_EMAIL}")
@@ -23,7 +20,3 @@ echo "Creating service account bindings..."
 gcloud projects add-iam-policy-binding $GCLOUD_PROJECT \
     --member "serviceAccount:${GCLOUD_SA_EMAIL}" \
     --role='roles/spanner.databaseUser'
-
-# ==============================================================================
-# GCP Dependancies
-# ==============================================================================

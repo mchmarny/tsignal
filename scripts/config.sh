@@ -7,8 +7,8 @@
 # export T_ACCESS_SECRET=""
 
 # Google
-export APP_NAME="signal"
-export GCLOUD_PROJECT="mchmarny-dev"
+export APP_NAME="tsignal"
+export GCLOUD_PROJECT="cpe-data"
 export GOOGLE_APPLICATION_CREDENTIALS="./auth.json"
 export GCLOUD_INSTANCE="${APP_NAME}"
 export GCLOUD_DB="db"

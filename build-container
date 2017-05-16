@@ -1,3 +1,0 @@
-bash build
-gcloud container builds submit --tag gcr.io/mchmarny-dev/signal:0.0.5 .
-rm signal

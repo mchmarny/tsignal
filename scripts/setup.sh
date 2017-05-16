@@ -3,8 +3,9 @@
 DIR="$(dirname "$0")"
 . "${DIR}/config.sh"
 
+
 gcloud beta spanner instances create ${GCLOUD_INSTANCE} \
-  --config=${GCLOUD_REGION} \
+  --config=regional-us-central1 \
   --description="${GCLOUD_INSTANCE} Instance" \
   --nodes=1
 

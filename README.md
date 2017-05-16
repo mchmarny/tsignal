@@ -3,7 +3,7 @@ Analyzing social media sentiment and its impact on stock market
 
 > Personal project, does not represent Google
 
-![tsignal topology](/../master/images/tsignal-topology.png?raw=true "tsignal topology")
+![tsignal topology](/../master/images/tsignal-topology-small.png?raw=true "tsignal topology")
 
 This Go app deploys into [GKE](https://cloud.google.com/container-engine/), subscribes to Twitter stream for all companies defined in the `Stocks` table in [Cloud Spanner](https://cloud.google.com/spanner/) and scores each event against the [Google NLP API](https://cloud.google.com/natural-language/) while comparing the user sentiment against the stock ask price against Yahoo API. 
 

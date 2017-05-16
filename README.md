@@ -7,14 +7,14 @@ Analyzing social media sentiment and its impact on stock market
 
 This Go app deploys into [GKE](https://cloud.google.com/container-engine/), subscribes to Twitter stream for all companies defined in the `Stocks` table in [Cloud Spanner](https://cloud.google.com/spanner/) and scores each event against the [Google NLP API](https://cloud.google.com/natural-language/) while comparing the user sentiment against the stock ask price against Yahoo API. 
 
-Aventually there will be a UI, for now, there are sample SQL scripts you can use to execute against the Cloud Spanner DB to analyze the data. 
+Eventually there will be a UI, for now, there are sample SQL scripts you can use to execute against the Cloud Spanner DB to analyze the data. 
 
 > All GCP services used in this example can be run under the GCP Free Tier plan. More more information see https://cloud.google.com/free/
 
 ## Configuration
 
 Edit the `scripts/config.sh` file with your Twitter API info. Alternatively
-define the following environment variables. Instractions how to configure your Twitter API access codes are found [here](http://docs.inboundnow.com/guide/create-twitter-application/):
+define the following environment variables. Instructions how to configure your Twitter API access codes are found [here](http://docs.inboundnow.com/guide/create-twitter-application/):
 
 ```
 # export T_CONSUMER_KEY=""
@@ -25,7 +25,7 @@ define the following environment variables. Instractions how to configure your T
 
 ## Run
 
-Once all the necessary envirnment vatiables are defined you can execute the `tsignal` appl locally `go run *.go` or use the included `Dockerfile` to create an image which you can then publish to the GCP (if needed, there is a script `build-publish` that will do all that for you.
+Once all the necessary environment variables are defined you can execute the `tsignal` appl locally `go run *.go` or use the included `Dockerfile` to create an image which you can then publish to the GCP (if needed, there is a script `build-publish` that will do all that for you.
 
 ## Cleanup
 

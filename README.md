@@ -9,6 +9,8 @@ This Go app deploys into [GKE](https://cloud.google.com/container-engine/), subs
 
 Eventually there will be a UI, for now, there are sample SQL scripts you can use to execute against the Cloud Spanner DB to analyze the data. 
 
+![sample query](/../master/images/sample-query-result.png?raw=true "sample query")
+
 > All GCP services used in this example can be run under the GCP Free Tier plan. More more information see https://cloud.google.com/free/
 
 ## Configuration

@@ -2,55 +2,55 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: signal
-  name: signal
+    app: tsignal
+  name: tsignal
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: signal
-      name: signal
+        app: tsignal
+      name: tsignal
     spec:
       containers:
-        - name: signal
-          image: gcr.io/cpe-data/tsignal:latest
+        - name: tsignal
+          image: gcr.io/cpe-data/tsignal:0.2.5
           imagePullPolicy: Always
           env:
             - name: T_CONSUMER_KEY
               valueFrom:
                 secretKeyRef:
-                  name: signal-tw-key
+                  name: tsignal-tw-key
                   key: T_CONSUMER_KEY
             - name: T_CONSUMER_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: signal-tw-secret
+                  name: tsignal-tw-secret
                   key: T_CONSUMER_SECRET
             - name: T_ACCESS_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: signal-tw-token
+                  name: tsignal-tw-token
                   key: T_ACCESS_TOKEN
             - name: T_ACCESS_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: signal-tw-access
+                  name: tsignal-tw-access
                   key: T_ACCESS_SECRET
             - name: GCLOUD_PROJECT
               valueFrom:
                 secretKeyRef:
-                  name: signal-gcloud-project
+                  name: tsignal-gcloud-project
                   key: GCLOUD_PROJECT
             - name: GCLOUD_INSTANCE
               valueFrom:
                 secretKeyRef:
-                  name: signal-spanner-instance
+                  name: tsignal-spanner-instance
                   key: GCLOUD_INSTANCE
             - name: GCLOUD_DB
               valueFrom:
                 secretKeyRef:
-                  name: signal-spanner-db
+                  name: tsignal-spanner-db
                   key: GCLOUD_DB
           volumeMounts:
             - name: "service-account"
@@ -60,7 +60,7 @@ spec:
       volumes:
         - name: "service-account"
           secret:
-            secretName: "signal-sa"
+            secretName: "tsignal-sa"
         - name: "certs"
           hostPath:
             path: "/etc/ssl/certs"

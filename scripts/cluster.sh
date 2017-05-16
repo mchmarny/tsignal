@@ -21,19 +21,20 @@ gcloud container clusters get-credentials "${APP_NAME}-cluster" \
   --zone $GCLOUD_ZONE --project $GCLOUD_PROJECT
 
 # configs
-kubectl create configmap signal-config --from-file configmaps/us-west1.yaml
+kubectl create configmap tsignal-config --from-file configmaps/us-west1.yaml
 
 
-# populate secrets
-kubectl create secret generic signal-tw-key --from-literal=T_CONSUMER_KEY=$T_CONSUMER_KEY
-kubectl create secret generic signal-tw-secret --from-literal=T_CONSUMER_SECRET=$T_CONSUMER_SECRET
-kubectl create secret generic signal-tw-token --from-literal=T_ACCESS_TOKEN=$T_ACCESS_TOKEN
-kubectl create secret generic signal-tw-access --from-literal=T_ACCESS_SECRET=$T_ACCESS_SECRET
+# populate twitter secrets
+kubectl create secret generic tsignal-tw-key --from-literal=T_CONSUMER_KEY=$T_CONSUMER_KEY
+kubectl create secret generic tsignal-tw-secret --from-literal=T_CONSUMER_SECRET=$T_CONSUMER_SECRET
+kubectl create secret generic tsignal-tw-token --from-literal=T_ACCESS_TOKEN=$T_ACCESS_TOKEN
+kubectl create secret generic tsignal-tw-access --from-literal=T_ACCESS_SECRET=$T_ACCESS_SECRET
 
-kubectl create secret generic signal-gcloud-project --from-literal=GCLOUD_PROJECT=$GCLOUD_PROJECT
-kubectl create secret generic signal-spanner-instance --from-literal=GCLOUD_INSTANCE=$GCLOUD_INSTANCE
-kubectl create secret generic signal-spanner-db --from-literal=GCLOUD_DB=$GCLOUD_DB
-kubectl create secret generic signal-sa --from-file auth.json
+# populate app secrets
+kubectl create secret generic tsignal-gcloud-project --from-literal=GCLOUD_PROJECT=$GCLOUD_PROJECT
+kubectl create secret generic tsignal-spanner-instance --from-literal=GCLOUD_INSTANCE=$GCLOUD_INSTANCE
+kubectl create secret generic tsignal-spanner-db --from-literal=GCLOUD_DB=$GCLOUD_DB
+kubectl create secret generic tsignal-sa --from-file auth.json
 
 # deploy
-# kubectl create -f deployments/signal.yaml
+# kubectl create -f deployments/tsignal.yaml

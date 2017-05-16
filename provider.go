@@ -66,7 +66,7 @@ func subscribeToStream(stock Stock, ch chan<- Content) {
 					UpdatedOn:   aquiredOn,
 				},
 			}
-			logInfo.Printf("Post [%v:%d]", stock.Symbol, msg.Post.PostID)
+			logDebug.Printf("Post [%v:%d]", stock.Symbol, msg.Post.PostID)
 			ch <- msg
 		}
 	}

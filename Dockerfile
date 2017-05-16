@@ -1,6 +1,11 @@
 FROM golang
-COPY ./ /go/src/github.com/mchmarny/tsignal
-WORKDIR /go/src/github.com/mchmarny/tsignal
-RUN go get ./
-RUN go build
-CMD ./tsignal
+MAINTAINER Mark Chmarny <mark@chmarny.com>
+
+RUN mkdir /app
+COPY ./tsignal /app/tsignal
+
+RUN mkdir /app/scripts
+COPY ./scripts/stocks.csv /app/scripts/stocks.csv
+
+WORKDIR /app
+CMD /app/tsignal

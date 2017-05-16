@@ -1,4 +1,4 @@
-# signal
+# tsignal
 Analyzing social media sentiment and its impact on stock market
 
 > Personal project, does not represent Google

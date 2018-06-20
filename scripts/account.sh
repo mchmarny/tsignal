@@ -5,14 +5,14 @@ DIR="$(dirname "$0")"
 
 
 echo "Checking if Service Account alredy created..."
-SA=$(gcloud beta iam service-accounts list --format='value(EMAIL)' --filter="EMAIL:${GCLOUD_SA_EMAIL}")
+SA=$(gcloud iam service-accounts list --format='value(EMAIL)' --filter="EMAIL:${GCLOUD_SA_EMAIL}")
 if [ -z "${SA}" ]; then
   echo "Service Account not set, creating..."
   gcloud beta iam service-accounts create $GCLOUD_SA_NAME \
     --display-name="${APP_NAME} service account"
 
   echo "Creating service account key..."
-  gcloud beta iam service-accounts keys create --iam-account $GCLOUD_SA_EMAIL \
+  gcloud iam service-accounts keys create --iam-account $GCLOUD_SA_EMAIL \
     $GOOGLE_APPLICATION_CREDENTIALS
 fi
 

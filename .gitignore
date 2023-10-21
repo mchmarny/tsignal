@@ -26,3 +26,6 @@ _testmain.go
 .DS_Store
 tsignal
 auth.json
+go.mod
+go.sum
+vendor/
